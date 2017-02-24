@@ -58,10 +58,20 @@ class ViewController: UIViewController {
     
     var displayValue : Double {
         get {
+            if labelDisplay.text == "error" {
+                return Double.nan
+            }
             return (NumberFormatter().number(from: labelDisplay.text!)?.doubleValue)!
         }
         set (newValue) {
-            labelDisplay.text = "\(newValue)"
+            let formatter = NumberFormatter()
+            // Formatting the outputs to avoid the n x 10^-n type of formatting.
+            formatter.positiveFormat = "###0.########"
+            if newValue.isNaN {
+                labelDisplay.text = "error"
+            } else {
+                labelDisplay.text = formatter.string(from: NSNumber(value: newValue))
+            }
         }
     }
     
@@ -108,6 +118,73 @@ class ViewController: UIViewController {
         displayValue = 0
         
         userHasStartedTyping = false
+    }
+    
+    // Toggling the text of buttons and labels when 2nd key is pressed.
+    var isInAlternativeMode = false
+    
+    @IBOutlet weak var buttonSin: UIButton!
+    @IBOutlet weak var labelSin: UILabel!
+    
+    @IBOutlet weak var buttonCos: UIButton!
+    @IBOutlet weak var labelCos: UILabel!
+    
+    @IBOutlet weak var buttonTan: UIButton!
+    @IBOutlet weak var labelTan: UILabel!
+    
+    @IBOutlet weak var buttonLog: UIButton!
+    
+    @IBAction func toggleLabels(_ sender: UIView) {
+        if !isInAlternativeMode {
+            buttonSin!.setTitle("SIN⁻¹", for: UIControlState.normal)
+            labelSin!.text = "SIN"
+        
+            buttonCos!.setTitle("COS⁻¹", for: UIControlState.normal)
+            labelCos!.text = "COS"
+        
+            buttonTan!.setTitle("TAN⁻¹", for: UIControlState.normal)
+            labelTan!.text = "TAN"
+        
+            buttonLog!.setTitle("ln(x)", for: UIControlState.normal)
+            
+            isInAlternativeMode = true
+        } else {
+            buttonSin!.setTitle("SIN", for: UIControlState.normal)
+            labelSin!.text = "SIN⁻¹"
+            
+            buttonCos!.setTitle("COS", for: UIControlState.normal)
+            labelCos!.text = "COS⁻¹"
+            
+            buttonTan!.setTitle("TAN", for: UIControlState.normal)
+            labelTan!.text = "TAN⁻¹"
+            
+            buttonLog!.setTitle("log(x)", for: UIControlState.normal)
+            
+            isInAlternativeMode = false
+        }
+    }
+    
+    // Toggling the text of the button and label of the radians / degrees switch.
+    var isInRadians = true
+    
+    @IBOutlet weak var buttonRadDeg: UIButton!
+    @IBOutlet weak var labelRadDeg: UILabel!
+    
+    @IBAction func toggleRadDeg(_ sender: UIButton) {
+        if isInRadians {
+            buttonRadDeg!.setTitle("DEG", for: UIControlState.normal)
+            labelRadDeg!.text = "RAD"
+            
+            isInRadians = false
+        } else {
+            buttonRadDeg!.setTitle("RAD", for: UIControlState.normal)
+            labelRadDeg!.text = "DEG"
+            
+            isInRadians = true
+        }
+        
+        // Set the "showInDegrees" to opposite to "isInRadians".
+        calcEngine?.showInDegrees = !isInRadians
     }
     
 }

@@ -62,6 +62,9 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <state key="normal" title="RAD"/>
+                                                                        <connections>
+                                                                            <action selector="toggleRadDeg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cUW-tf-H6t"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -71,7 +74,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="on0-Q4-Dgn">
                                                                 <rect key="frame" x="68" y="0.0" width="60" height="81"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIN-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6H-jS-ETY">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIN⁻¹" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6H-jS-ETY">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="jMJ-KF-EsI"/>
@@ -91,6 +94,9 @@
                                                                         <state key="normal" title="SIN">
                                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="syH-dF-yUb"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -100,7 +106,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GSK-aY-EbG">
                                                                 <rect key="frame" x="136" y="0.0" width="60" height="81"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COS-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZs-uc-SkR">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COS⁻¹" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZs-uc-SkR">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="UUi-Tx-Xye"/>
@@ -120,6 +126,9 @@
                                                                         <state key="normal" title="COS">
                                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oG1-62-FmT"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -129,7 +138,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ew7-bz-9eg">
                                                                 <rect key="frame" x="204" y="0.0" width="60" height="81"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAN-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-Rc-35k">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAN⁻¹" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-Rc-35k">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="m8C-ws-php"/>
@@ -149,6 +158,9 @@
                                                                         <state key="normal" title="TAN">
                                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dff-yB-Gvq"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -173,6 +185,9 @@
                                                                 <state key="normal" title="2nd">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="toggleLabels:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fgz-HT-LR7"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
@@ -330,7 +345,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qSD-Zo-6p9"/>
+                                                            <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UzD-y4-7kv"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -619,15 +634,6 @@
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JO-kW-mF9">
-                                <rect key="frame" x="100" y="89" width="332" height="14.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="sOt-kO-F0n"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -642,7 +648,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonCos" destination="iXP-BY-sVd" id="Kj4-bW-VFJ"/>
+                        <outlet property="buttonLog" destination="FAg-aK-wUZ" id="mwa-aB-A3F"/>
+                        <outlet property="buttonRadDeg" destination="twP-k5-7I8" id="ROx-Iu-aUv"/>
+                        <outlet property="buttonSin" destination="zno-xh-5Yy" id="JHK-mJ-oYf"/>
+                        <outlet property="buttonTan" destination="tqv-sO-kEh" id="WNL-T3-oE3"/>
+                        <outlet property="labelCos" destination="iZs-uc-SkR" id="X64-86-44s"/>
                         <outlet property="labelDisplay" destination="xeB-Ei-yMk" id="dvC-5z-cB1"/>
+                        <outlet property="labelRadDeg" destination="Yb1-Q2-QxH" id="nZl-eF-PfV"/>
+                        <outlet property="labelSin" destination="V6H-jS-ETY" id="emD-rq-8Pd"/>
+                        <outlet property="labelTan" destination="ckA-Rc-35k" id="hMu-6d-URF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
