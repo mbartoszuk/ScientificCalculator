@@ -13,6 +13,7 @@ class CalculatorEngine :NSObject {
     
     var operandStack = Array<Double>()
     
+    // Adds any number - entered or the answer - to the stack.
     func updateStackWithValue(value: Double)
     {
         if !value.isNaN {
@@ -22,6 +23,7 @@ class CalculatorEngine :NSObject {
     
     var showInDegrees: Bool = false
     
+    // All the mathematical operations.
     func operate(operation: String) -> Double {
         
         switch operation
@@ -123,6 +125,7 @@ class CalculatorEngine :NSObject {
         return 0.0
     }
     
+    // For SIN, COS and TAN, which are in degrees by default.
     func convertDegreesToRadians(input: Double) -> Double {
         if showInDegrees {
             return (input / 180) * Double.pi
@@ -131,6 +134,7 @@ class CalculatorEngine :NSObject {
         }
     }
     
+    // For ARCSIN, ARCCOS and ARCTAN, which are in radians by default.
     func convertRadiansToDegrees(input: Double) -> Double {
         if showInDegrees {
             return input * 180 / Double.pi

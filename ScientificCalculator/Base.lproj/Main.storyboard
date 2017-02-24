@@ -282,6 +282,9 @@
                                                         <state key="normal" title="TAPE">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="3vA-Mt-w4Y" kind="show" identifier="pushToOperations" id="dSq-sp-n1z"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <variation key="heightClass=compact" axis="vertical"/>
@@ -663,6 +666,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Operations View Controller-->
+        <scene sceneID="Txs-i9-ASz">
+            <objects>
+                <viewController id="3vA-Mt-w4Y" customClass="OperationsViewController" customModule="ScientificCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lfb-ds-Al2"/>
+                        <viewControllerLayoutGuide type="bottom" id="YLj-ym-vG6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VlB-rf-ctA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-Jn-plU">
+                                <rect key="frame" x="286" y="28" width="73" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Clear all">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearAllData:" destination="3vA-Mt-w4Y" eventType="touchUpInside" id="ZhC-i4-N4b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzZ-yB-Z60">
+                                <rect key="frame" x="16" y="28" width="60" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Return">
+                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="zGx-nz-swR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sn0-je-3jH">
+                                <rect key="frame" x="16" y="72" width="343" height="575"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gxE-Jn-plU" secondAttribute="trailing" id="2on-HQ-EvQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sn0-je-3jH" secondAttribute="leading" id="7Ev-GH-z4W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sn0-je-3jH" secondAttribute="trailing" id="7lA-Dc-7bo"/>
+                            <constraint firstItem="sn0-je-3jH" firstAttribute="top" secondItem="Lfb-ds-Al2" secondAttribute="bottom" constant="52" id="CnP-5O-SfP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wzZ-yB-Z60" secondAttribute="leading" id="JbQ-Ca-JzF"/>
+                            <constraint firstItem="gxE-Jn-plU" firstAttribute="top" secondItem="Lfb-ds-Al2" secondAttribute="bottom" constant="8" id="QBP-jx-p8H"/>
+                            <constraint firstItem="YLj-ym-vG6" firstAttribute="top" secondItem="sn0-je-3jH" secondAttribute="bottom" constant="20" id="mhJ-dq-bdk"/>
+                            <constraint firstItem="wzZ-yB-Z60" firstAttribute="top" secondItem="Lfb-ds-Al2" secondAttribute="bottom" constant="8" id="rIr-pz-Bnp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelOperations" destination="sn0-je-3jH" id="hxa-0M-Vkm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAN-e8-L74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>

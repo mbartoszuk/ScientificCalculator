@@ -13,14 +13,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelDisplay: UILabel!
     
     var calcEngine : CalculatorEngine?
+    var operations:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+    
+        // Initialising the calcEngine.
         if self.calcEngine == nil {
             self.calcEngine = CalculatorEngine()
         }
+        
+        // Persisting the operations data in the application.
+        let sel:Selector = #selector(self.appMovedToBackground)
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: sel, name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        let defaults = UserDefaults.standard
+        if let operations:AnyObject = defaults.object(forKey:"operationsData") as AnyObject? {
+            self.operations = (operations as! [String])
+        }
+        print("Memorized operations: \(self.operations)")
+    }
+    
+    // Saves the operations when the app is closed.
+    func appMovedToBackground() {
+        print ("app moved to background")
+        let defaults = UserDefaults.standard
+        print("Saving operations: \(operations)")
+        defaults.set(self.operations, forKey: "operationsData")
     }
     
     var userHasStartedTyping = false
@@ -35,9 +56,10 @@ class ViewController: UIViewController {
         if userHasStartedTyping {
             // Check if the value is already a decimal.
             if labelDisplay.text!.contains(".") {
-                //Do nothing if it is.
+                //Do nothing if it is, finish the method here.
                 return
             }
+            // Flags true and adds the dot if it was pressed.
             if valueIsADecimal {
                 labelDisplay.text = labelDisplay.text! + ".\(digit)"
             } else {
@@ -56,6 +78,7 @@ class ViewController: UIViewController {
         valueIsADecimal = false
     }
     
+    // Displaying the outcome of the operation.
     var displayValue : Double {
         get {
             if labelDisplay.text == "error" {
@@ -67,6 +90,7 @@ class ViewController: UIViewController {
             let formatter = NumberFormatter()
             // Formatting the outputs to avoid the n x 10^-n type of formatting.
             formatter.positiveFormat = "###0.########"
+            
             if newValue.isNaN {
                 labelDisplay.text = "error"
             } else {
@@ -76,13 +100,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enter(_ sender: UIButton) {
+        // Add the operation to the operations array.
+        self.operations.append("\(displayValue)")
         
         userHasStartedTyping = false
         self.calcEngine!.updateStackWithValue(value: displayValue)
         print("Operand Stack on engine = \(self.calcEngine!.operandStack)")
-        
     }
     
+    // Dispatches all the operations to the calculator.
     @IBAction func operation(_ sender: UIButton) {
         let operation = sender.currentTitle!
         
@@ -90,8 +116,16 @@ class ViewController: UIViewController {
             enter(sender)
         }
         
+        // Add the operation to the operations array.
+        self.operations.append(operation)
+        
         self.displayValue = self.calcEngine!.operate(operation: operation)
         enter(sender)  // put result back on the stack
+        
+        // Move to the new line in the tape view.
+        self.operations.append("\n")
+        
+        valueIsADecimal = false
     }
     
     @IBAction func insertPi(_ sender: UIButton) {
@@ -185,6 +219,12 @@ class ViewController: UIViewController {
         
         // Set the "showInDegrees" to opposite to "isInRadians".
         calcEngine?.showInDegrees = !isInRadians
+    }
+    
+    // Sends the operations data to the other view.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let operationsViewController = segue.destination as! OperationsViewController
+        operationsViewController.operations = self.operations
     }
     
 }

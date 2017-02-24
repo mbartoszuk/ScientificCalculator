@@ -13,6 +13,8 @@
 		4C1181FB1E53541300ECD5B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1181FA1E53541300ECD5B4 /* Assets.xcassets */; };
 		4C1181FE1E53541300ECD5B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1181FC1E53541300ECD5B4 /* LaunchScreen.storyboard */; };
 		4CEDEEEE1E5F0D5A00FDFB1E /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDEEED1E5F0D5A00FDFB1E /* CalculatorEngine.swift */; };
+		4CF003FF1E602D5D0008300F /* OperationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF003FD1E602D5D0008300F /* OperationsViewController.swift */; };
+		4CF004001E602D5D0008300F /* OperationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF003FE1E602D5D0008300F /* OperationsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		4C1181FD1E53541300ECD5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C1181FF1E53541300ECD5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CEDEEED1E5F0D5A00FDFB1E /* CalculatorEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
+		4CF003FD1E602D5D0008300F /* OperationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsViewController.swift; sourceTree = "<group>"; };
+		4CF003FE1E602D5D0008300F /* OperationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperationsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				4C1181FA1E53541300ECD5B4 /* Assets.xcassets */,
 				4C1181FC1E53541300ECD5B4 /* LaunchScreen.storyboard */,
 				4C1181FF1E53541300ECD5B4 /* Info.plist */,
+				4CF003FD1E602D5D0008300F /* OperationsViewController.swift */,
+				4CF003FE1E602D5D0008300F /* OperationsViewController.xib */,
 			);
 			path = ScientificCalculator;
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF004001E602D5D0008300F /* OperationsViewController.xib in Resources */,
 				4C1181FE1E53541300ECD5B4 /* LaunchScreen.storyboard in Resources */,
 				4C1181FB1E53541300ECD5B4 /* Assets.xcassets in Resources */,
 				4C1181F91E53541300ECD5B4 /* Main.storyboard in Resources */,
@@ -139,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF003FF1E602D5D0008300F /* OperationsViewController.swift in Sources */,
 				4C1181F61E53541300ECD5B4 /* ViewController.swift in Sources */,
 				4C1181F41E53541300ECD5B4 /* AppDelegate.swift in Sources */,
 				4CEDEEEE1E5F0D5A00FDFB1E /* CalculatorEngine.swift in Sources */,
